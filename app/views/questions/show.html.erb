@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cat:</b>
+  <%= @question.cat_id %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @question.content %>
+</p>
+
+<p>
+  <b>Info:</b>
+  <%= @question.info %>
+</p>
+
+<p>
+  <b>Corr answ:</b>
+  <%= @question.corr_answ_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>

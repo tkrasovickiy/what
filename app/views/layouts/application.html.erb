@@ -12,8 +12,22 @@
       <div class="navbar">
         <div class="navbar-inner">
           <%= link_to "What??", { :controller => "main", :action => "index" }, :class => "brand" %>
+          <div class="pull-right" id="user_nav">
+            <% if current_user %>
+              <!--Logged in as <%= current_user.email %>.-->
+              <%= link_to "Log out", log_out_path, :class => "btn btn-inverse" %>
+            <% else %>
+              <%= link_to "Sign up", sign_up_path, :class => "btn" %>
+              <%= link_to "Log in", log_in_path, :class => "btn btn-success" %>
+            <% end %>
+          </div>
         </div>
       </div>
+      <!--<div class="container-fluid">
+        <% flash.each do |name, msg| %>
+          <%= content_tag :div, msg, :id => "flash_#{name}" %>
+        <% end %>
+      </div>-->
       <div class="container-fluid">
         <div class="row-fluid">
           <div class="span2">
